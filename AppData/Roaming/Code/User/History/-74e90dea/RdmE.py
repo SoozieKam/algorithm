@@ -1,6 +1,0 @@
-f = open('fruits.txt', 'r', encoding='UTF8')
-w = open('02.txt', 'w', encoding='UTF8')
-a = f.read()
-cnt = len((list(a.split('\n'))))
-w.write(str(cnt))
-f.close()
