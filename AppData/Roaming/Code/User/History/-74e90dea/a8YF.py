@@ -1,0 +1,6 @@
+f = open('fruits.txt', 'w', encoding='UTF8')
+a = f.read()
+cnt = len(a.split())
+print(cnt)
+f.write(str(cnt))
+f.close()
