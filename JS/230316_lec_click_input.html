@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .blue {
+            color: lightblue ;
+        }
+    </style>
+</head>
+<body>
+    <h1></h1>
+    <button id="btn">버트은</button>
+    <input type="text" id="text-input">
+
+    <script>
+        const buttonTag = document.querySelector('#btn')
+        const h1Tag = document.querySelector('h1')
+        const inputTag = document.querySelector('#text-input')
+
+        buttonTag.addEventListener('click', () => {
+            h1Tag.classList.toggle('blue') // 블루가 클래스에 있으면 빼고 없으면 넣는 기능.
+        })
+
+        // 토글 대신 if문으로 만들 수도 있음
+        // if (h1Tag.classList.value) {
+        //     h1Tag.classList.remove('blue')
+        // } else {
+        //    h1Tag.classList.add('blue')
+        //} 
+        
+        inputTag.addEventListener('input', (event) => {
+            h1Tag.textContent = event.target.value
+        })
+    </script>
+</body>
+</html>
