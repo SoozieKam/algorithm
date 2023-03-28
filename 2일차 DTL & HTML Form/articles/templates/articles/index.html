@@ -1,0 +1,8 @@
+{% comment %} 상속 {% endcomment %} {% extends 'base.html' %} {% block content
+%}
+<h1>Hello, {{name}}!!</h1>
+<a href="{% url 'dinner' %}">dinner</a>
+<a href="{% url 'search' %}">search</a>
+<a href="{% url 'throw' %}">throw</a>
+{% endblock content %} {% comment %} block 이름은 부모 html의 block 이름과
+같아야 함 {% endcomment %}
