@@ -1,0 +1,52 @@
+{% extends 'base.html' %} {% block content %}
+
+<nav class="navbar text-align" style="z-index: 100">
+  <div class="container-fluid">
+    <h1 class="m-3">TO DO List</h1>
+    <a
+      type="button"
+      class="btn btn-warning m-3 shadow rounded"
+      href="{% url 'todos:new' %}"
+      >할 일 추가</a
+    >
+  </div>
+</nav>
+<div class="container">
+  <div class="row">
+    {% for i in todos %}
+    <div
+      class="col-3 card border-light shadow m-5 bg-body-tertiary rounded"
+      style="max-width: 20rem"
+    >
+      <div class="card-header">Title : {{i.title}}</div>
+
+      <div class="card-body text-secondary">
+        <p>Content : {{i.content}}</p>
+        <hr />
+
+        <p>
+          Completed : {% if i.completed == True %} Y {% else %} N {% endif %}
+        </p>
+        <hr />
+
+        <p>priority : {{i.priority}}</p>
+        <hr />
+
+        <p>deadline : {{i.deadline}}</p>
+        <hr />
+      </div>
+
+      <div class="card-footer d-flex justify-content-end">
+        <a
+          class="btn btn-dark"
+          href="{% url 'todos:detail' i.pk %}"
+          role="button"
+          >자세히</a
+        >
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock content %}

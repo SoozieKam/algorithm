@@ -1,0 +1,35 @@
+{% extends 'base.html' %} {% block content %}
+<h1>할 일 추가</h1>
+
+<div class="card m-2 p-4">
+  <form action="{% url 'todos:create' %}" method="GET">
+    <div>
+      <label for="title">Title</label>
+      <input type="text" name="title" id="title" />
+    </div>
+
+    <div>
+      <label for="content">Content</label>
+      <input type="text" name="content" id="content" cols="30" rows="30" />
+    </div>
+
+    <div>
+      <label for="Completed">Completed?</label>
+      <input type="text" name="completed" id="completed" />
+    </div>
+
+    <div>
+      <label for="priority">Priority</label>
+      <input type="text" name="priority" id="priority" />
+    </div>
+
+    <div>
+      <label for="deadline">Deadline</label>
+      <input type="text" name="deadline" id="deadline" />
+    </div>
+    <input type="submit" />
+  </form>
+</div>
+<a href="{% url 'todos:index' %}">뒤로 가기</a>
+
+{% endblock content %}

@@ -1,0 +1,43 @@
+{% extends 'base.html' %} {% block content %} 
+
+<h1>Edit</h1>
+    <form action="{% url 'todos_app:update' todo.pk %}" method="POST">
+      {% csrf_token %}
+      <div>
+        <label for="title">TITLE</label>
+        <input type="text" name="title" id="title" value="{{todo.title}}" />
+      </div>
+
+      <div>
+        <label for="content">CONTENT</label>
+        <textarea name="content" id="content" cols="30" rows="30">
+{{todo.content}}</textarea
+        >
+      </div>
+
+      <div>
+        <label for="completed">Completed?</label>
+        <textarea name="completed" id="completed" >
+{{todo.completed}}</textarea
+        >
+      </div>
+
+      <div>
+        <label for="priority">PRIORITY</label>
+        <textarea name="priority" id="priority" >
+{{todo.priority}}</textarea
+        >
+      </div>
+
+      <div>
+        <label for="deadline">DEADLINE</label>
+        <textarea name="deadline" id="deadline" >
+{{todo.deadline}}</textarea
+        >
+      </div>
+
+      <input type="submit" value="SUBMIT" />
+    </form>
+    <a href="{% url 'todos_app:index' %}">BACK</a>
+
+{% endblock content %}

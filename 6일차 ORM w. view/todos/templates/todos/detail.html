@@ -1,0 +1,21 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="card" style="width: 18rem">
+  <div class="card-body">
+    <p>Title: {{todo_pk.title}}</p>
+
+    <div class="mb-2 text-body-secondary">
+      <p>Content: {{todo_pk.created_at}}</p>
+      <p>
+        Completed: {% if todo_pk.completed == True %} Y {% else %} N {% endif %}
+      </p>
+      <p>Deadline: {{todo_pk.deadline}}</p>
+    </div>
+  </div>
+
+  <a type="button" class="btn btn-warning" href="{% url 'todos:index' %}"
+    >뒤로 가기</a
+  >
+</div>
+
+{% endblock content %}

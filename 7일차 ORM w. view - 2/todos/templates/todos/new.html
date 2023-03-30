@@ -1,0 +1,42 @@
+{% extends 'base.html' %} {% block content %} 
+
+<div class="container card m-2 p-4" style="width: 25rem">
+ <div class="card-body">
+    <form action="{% url 'todos_app:create' %}" method="POST">
+        {% csrf_token %}
+
+        <div>
+        <label for="title">TITLE</label>
+        <input type="text" name="title" id="title">
+    </div>
+
+    <div>
+        <label for="content">CONTENT</label>
+        <input type="text" name="content" id="content" cols="30" rows="30">
+    </div>
+
+    <div>
+        <label for="Completed">Completed?</label>
+        <input type="text" name="completed" id="completed" >
+      </div>
+  
+      <div>
+        <label for="priority">Priority</label>
+        <input type="number" name="priority" id="priority" />
+      </div>
+  
+      <div>
+        <label for="deadline">Deadline</label>
+        <input type="text" name="deadline" id="deadline" value="{{todo.deadline|date:'Y-m-d'}}" required/>
+      </div>
+      <input type="submit" value="SUBMIT">
+
+    </form>
+
+ </div>
+
+ <a type="button" class="btn btn-warning" href="{% url 'todos_app:index' %}"
+ >BACK</a>
+</div>
+
+{% endblock content %}

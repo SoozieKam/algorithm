@@ -1,0 +1,27 @@
+{% extends 'base.html' %} {% block content %}
+
+<nav class="navbar text-align" style="z-index: 100">
+    <div class="container-fluid">
+      <h1 class="m-3">TO DO LIST</h1>
+      <a
+        type="button"
+        class="btn btn-warning m-3 shadow rounded"
+        href="{% url 'todos_app:new' %}"
+        >ADD</a
+      >
+    </div>
+  </nav>
+         
+
+{% for i in todos %}
+<ul>
+    <a href="{% url 'todos_app:detail' i.pk %}" class="btn btn-dark" role="button"> {{i.title}}  </a> 
+    
+</ul>
+
+{% endfor %}
+
+
+{% endblock content %}
+
+
