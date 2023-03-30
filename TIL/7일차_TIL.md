@@ -31,7 +31,7 @@ a# 7일차 ORM w.view -2
     ```
 
 2.  Django - ORM with view<br> 1. app URLs 분할 및 연결
-    앱이 많아지면 이렇게 구별하는 게 좋음
+    <br> 앱이 많아지면 이렇게 구별하는 게 좋음
 
             1. project/urls.py에서 <br>
             `from django.urls import path, include` 추가
@@ -56,15 +56,15 @@ a# 7일차 ORM w.view -2
 
         4. READ (조회)
             1. app/views.py
-            ```python
-            def detail(request, todo_pk):
-                todo_1 = Todo.objects.get(pk=todo_pk)
-                context = {
-                    'todo' : todo_1,
-                }
-                return render(request, 'todos/detail/html', context)
-            ```
-            변수 이름 조심해야 함 !
+                ```python
+                def detail(request, todo_pk):
+                    todo_1 = Todo.objects.get(pk=todo_pk)
+                    context = {
+                        'todo' : todo_1,
+                    }
+                    return render(request, 'todos/detail/html', context)
+                ```
+                변수 이름 조심해야 함 !
 
             2. template
             view함수의 context 딕셔너리의 key 값을 template에서 사용. 이런 식으로 ! `{{todo.title}}`
@@ -106,6 +106,7 @@ a# 7일차 ORM w.view -2
                 예)
                 ```html
                 <a href="{% url 'todos_app:edit' todo.pk %}>EDIT</a>
+                ```
 
 ### 실습 주제
 
